@@ -1,16 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Button from "./Button";
 import "./styles.css";
 
 function soma(a, b) {
-  return a + b;
+  alert(a + b);
 }
 
 function primeiroJSX() {
   return (
     <div>
-      RafaelSantana - Introdução ao React
-      <h1>Soma: {soma(10, 20)}</h1>
+      <h2>RafaelSantana - Introdução ao React</h2>
+      <Button onClick={() => soma(10, 20)} name="RafaelSantana" />
     </div>
   );
 }
