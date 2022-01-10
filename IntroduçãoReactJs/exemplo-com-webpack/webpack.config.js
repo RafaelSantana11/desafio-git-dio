@@ -1,15 +1,13 @@
-// Imports
-var path = require("path");
-
-// Plugins
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-// Exports
 module.exports = {
+  mode: 'development',
+  devtool: "source-map",
   entry: "./src/index.js",
   output: {
-    filename: "bundler.js",
     path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   module: {
     rules: [
@@ -18,14 +16,14 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-        }
-      }
-    ]
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: "./public/index.html",
       filename: "./index.html",
-    })
-  ]
+    }),
+  ],
 };
